@@ -1,12 +1,16 @@
-# ==================================================
-# Docker Enviroment
-# ==================================================
+# ================================
+# Configurações do Ambiente Docker
+# ================================
 
-# Apache Incoming Port
+# Apache Incoming Port (porta externa do Apache)
 ApacheIncomingPort=80
 
-# MySQL Root Password (for full application)
+# Apache Root Path (padrão: ./ - para corresponder à raiz)
+ApacheRootPath=./
+
+# MySQL Root Password (usado para o docker-compose-full)
 MySQLRootPassword=1234
 
-# MySQL Shared Folter (between container and host)
+# MySQL Shared Folter (usado para o docker-compose-full)
+# Obs.: pasta de compartilhamento de arquivos entre o host e o container do MySQL tornando a manipulação de databases fáceis
 MySQLContainerSharedFolder=E:\Downloads

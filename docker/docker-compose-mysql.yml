@@ -10,7 +10,7 @@ services:
     ports:
       - ${ApacheIncomingPort}:8080
     volumes:
-      - .:/var/www/html
+      - ${ApacheRootPath}:/var/www/html
       - ./docker/logs/apache2:/var/log/apache2
 
   mariadb:
