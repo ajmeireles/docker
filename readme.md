@@ -1,11 +1,12 @@
 # Servidor Docker
 
-Ambiente de desenvolvimento local baseado em Docker. Todos os ``compose`` disponíveis utilizam Ubuntu 16 contendo as seguintes opções disponíveis:
+Repositório de desenvolvimento pronto para uso baseado em Docker. Ideal para aqueles que estão tendo a sua primeira experiência de uso do Docker **(dê adeus ao Xampp/Wampp!)**. Há duas opções disponíveis: uma simples (apenas com Apache + PHP 7.4) e outra completa (contendo estrutura de banco de dados), veja os exemplos abaixo.
 
 ## padrão
 
 **docker-compose.yml** (simples, apenas Apache + PHP)
 
+- Ubuntu 16
 - Apache
 - PHP 7.4
 
@@ -13,6 +14,7 @@ Ambiente de desenvolvimento local baseado em Docker. Todos os ``compose`` dispon
 
 **docker-compose-mysql.yml** (para aplicações que necessita de banco de dados)
 
+- Ubuntu 16
 - Apache
 - PHP 7.4
 - MariaDB 10.X
@@ -22,7 +24,14 @@ Ambiente de desenvolvimento local baseado em Docker. Todos os ``compose`` dispon
 
 ## Como Utilizar:
 
-**1. Selecione o arquivo a ser utilizado:**
+**Para utilizar, logicamente você precisa ter o Docker instalado em sua máquina. Em seguida, siga o procedimento abaixo:**
+
+**1. Clone o repositório:**
+
+- git clone git@github.com:ajmeireles/docker.git docker
+- cd docker
+
+**2. Selecione o arquivo a ser utilizado:**
 
 - cp docker/docker-compose.yml docker-compose.yml
 
@@ -30,16 +39,16 @@ Ambiente de desenvolvimento local baseado em Docker. Todos os ``compose`` dispon
 
 - cp docker/docker-compose-mysql.yml docker-compose.yml
 
-**2. Copie o .env que define variáveis do ambiente:**
+**3. Copie o .env que define variáveis do ambiente:**
 
 - cp docker/env-example .env
 
-**3. Rode o container:**
+**4. Rode o container:**
 
 - docker-compose up -d
 
 
-**4. Use a vontade:**
+**5. Use a vontade:**
 
 - Acesse: http://localhost/ **(se a ``ApacheIncomingPort`` no .env foi mantida como 80)**
 
