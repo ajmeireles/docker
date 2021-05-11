@@ -1,4 +1,4 @@
-# Servidor Docker
+# Repositório Docker, Ready To Go!
 
 Repositório de desenvolvimento pronto para uso baseado em Docker. Ideal para aqueles que estão tendo a sua primeira experiência de uso do Docker **(dê adeus ao Xampp/Wampp!)**. Há duas opções disponíveis: uma simples (apenas com Apache + PHP 7.4) e outra completa (contendo estrutura de banco de dados), veja os exemplos abaixo.
 
@@ -12,7 +12,7 @@ Repositório de desenvolvimento pronto para uso baseado em Docker. Ideal para aq
 
 ## completo:
 
-**docker-compose-mysql.yml** (para aplicações que necessita de banco de dados)
+**docker-compose-mysql.yml** (para aplicações que necessitam de banco de dados)
 
 - Ubuntu 16
 - Apache

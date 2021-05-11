@@ -6,6 +6,9 @@
 ApacheIncomingPort=80
 
 # Apache Root Path (padrão: ./ - para corresponder à raiz)
+# Defina: ApacheRootPath=./public/ para direcionar o documentroot do Apache para pasta public
+# Defina: ApacheRootPath=./public_html/ para direcionar o documentroot do Apache para pasta public_html
+# Lembre-se de criar essa pasta (acima citada) na raíz do repositório
 ApacheRootPath=./
 
 # MySQL Root Password (usado para o docker-compose-full)
