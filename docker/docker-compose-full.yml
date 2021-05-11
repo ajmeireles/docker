@@ -1,0 +1,39 @@
+version: "3.2"
+
+services:
+  apache:
+    build:
+      context: ./docker/apache2
+    hostname: apache
+    container_name: apache
+    restart: always
+    ports:
+      - ${ApacheIncomingPort}:8080
+    volumes:
+      - .:/var/www/html
+      - ./docker/logs/apache2:/var/log/apache2
+
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    command: --default-authentication-plugin=mysql_native_password --sql_mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MySQLRootPassword}
+    volumes:
+      - ${MySQLContainerSharedFolder}:/var/download
+      - ./mysql:/var/lib/mysql:cached
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    hostname: phpmyadmin
+    links:
+      - mariadb
+    ports:
+      - "81:80"
+    environment:
+      - PMA_ARBITRARY=1

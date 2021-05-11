@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  apache:
+    build:
+      context: ./docker/apache2
+    hostname: apache
+    container_name: apache
+    restart: always
+    ports:
+      - ${ApacheIncomingPort}:8080
+    volumes:
+      - .:/var/www/html
+      - ./docker/logs/apache2:/var/log/apache2

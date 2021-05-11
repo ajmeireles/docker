@@ -1,0 +1,12 @@
+# ==================================================
+# Docker Enviroment
+# ==================================================
+
+# Apache Incoming Port
+ApacheIncomingPort=80
+
+# MySQL Root Password (for full application)
+MySQLRootPassword=1234
+
+# MySQL Shared Folter (between container and host)
+MySQLContainerSharedFolder=E:\Downloads
