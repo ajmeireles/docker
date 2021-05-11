@@ -58,3 +58,5 @@ A pasta raíz do Apache (documentroot) por padrão corresponde a raíz (onde o r
 ou
 
 - ApacheRootPath=./public_html/ **(para public_html)**
+
+**O padrão dessa configuração é: ``ApacheRootPath=./``**
